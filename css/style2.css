@@ -1,0 +1,173 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: 'NanumSquare';}
+.wrap {width: 100%; overflow: hidden;}
+
+
+header {width: 100%; height: 85px; line-height: 85px; position: fixed; z-index: 100; transition: all 0.2s;}
+header.on {background: #fff; box-shadow: 2px 0 6px rgba(0,0,0,0.2); transition: all 0.2s;}
+header .innerHeader {width: 85%; height: 100%; position: relative; margin: 0 auto; overflow: hidden;}
+header .innerHeader a {display: block; width: 100%; height: 100%;}
+header .innerHeader .logo {width: 20%; position: absolute; left: 50%; top: 22px; transform: translateX(-50%); text-align: center; font-size: 33px; line-height: 0.7; font-family: 'Noto Serif', serif; font-weight: lighter; letter-spacing: 1px;}
+header .innerHeader .logo span {font-size: 16px;}
+header .innerHeader .left {float: left;}
+header .innerHeader .left li {float: left; font-size: 16px; margin-right: 30px;}
+header .innerHeader .right {float: right; position: relative;}
+header .innerHeader .right li {float: left; font-size: 16px; margin-right: 30px;}
+header .innerHeader .right li:nth-child(2) {color: #B79383; margin-right: 60px;}
+
+/* menuOpen */
+.menuOpen {width: 500px; overflow: hidden; background: #DCD2C8; height: 100vh; position: fixed; top: 0; right: -500px; z-index: 100; transition: all 0.5s;}
+.menuOpen .close {position: absolute; top: 30px; right: 50px;}
+.menuOpen .menuwrap {margin-top: 150px; margin-left: 80px;}
+.menuOpen .menuwrap ul li {font-family: 'Noto Serif', serif; font-size: 40px; margin-bottom: 50px;}
+.menuOpen .menuwrap .bottom {padding-top: 30px; border-top: 1px solid #707070; position: absolute; bottom: 40px; left: 80px; width: 300px}
+.menuOpen .menuwrap .customer {font-size: 16px; color: #707070; margin-bottom:  15px;}
+.menuOpen .menuwrap .contact {font-size: 16px; color: #707070; margin-bottom:  15px;}
+.menuOpen .menuwrap .sns {display: flex; justify-content: space-between; width: 100px;}
+.menuOpen .menuwrap .sns p {width: 27px;}
+.menuOpen .menuwrap .sns p img {width: 100%;}
+
+/* menuOpen.on */
+.menuOpen.on {transition: all 0.5s; right: 0;}
+
+.sonocalm {width: 100%;}
+.sonocalm .inner {width: 100%; padding: 170px 210px 200px 384px; box-sizing: border-box;}
+.sonocalm .inner .img {width: 1328px; margin-bottom: 80px;}
+.sonocalm .inner .img img {width: 100%;}
+.sonocalm .inner .txt {width: 100%; display: flex;}
+.sonocalm .inner .txt .left {width: 45%;}
+.sonocalm .inner .txt .left h2 {font-size: 45px; font-family: 'Noto Serif', serif; font-weight: lighter;}
+.sonocalm .inner .txt .right {width: 55%; padding-left: 50px;}
+.sonocalm .inner .txt .right .top {font-size: 16px; line-height: 2.5; margin-bottom: 50px;}
+.sonocalm .inner .txt .right .bottom {display: flex;}
+.sonocalm .inner .txt .right .bottom .day {font-size: 33px; font-family: 'Noto Serif', serif; font-weight: lighter; line-height: 1;}
+.sonocalm .inner .txt .right .bottom .day span {font-size: 15px; font-family: 'NanumSquare'; color: #707070;}
+.sonocalm .inner .txt .right .bottom .room {padding-left: 150px; font-size: 33px; font-family: 'Noto Serif', serif; font-weight: lighter; line-height: 1;}
+.sonocalm .inner .txt .right .bottom .room span {font-size: 15px; font-family: 'NanumSquare'; color: #707070;}
+
+/* animation */
+.sonocalm .inner .img {-webkit-animation-name: opacity-ani;animation-name: opacity-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+
+@-webkit-keyframes up-ani {
+    0%{opacity: 0; transform: translateY(100px);}
+    30%{opacity: 0; transform: translateY(100px);}
+}
+@keyframes up-ani {
+    0%{opacity: 0; transform: translateY(100px);}
+    30%{opacity: 0; transform: translateY(100px);}
+}
+
+.sonocalm .inner .txt .left h2 {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+.sonocalm .inner .txt .right .top {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+.sonocalm .inner .txt .right .bottom .day {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2.5s; animation-duration: 2.5s;}
+.sonocalm .inner .txt .right .bottom .room {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2.5s; animation-duration: 2.5s;}
+/* fin */
+
+.gallery {background: #DCD2C8; overflow: hidden;}
+.gallery .inner {width: 100%; margin-top: 180px; margin-bottom:300px;}
+.gallery .inner h2 {font-size: 45px; font-family: 'Noto Serif', serif; font-weight: lighter; margin-bottom: 60px; padding-left: 384px;}
+
+/* swiper */
+
+.gallery .inner .swiper {width: 100%;}
+.gallery .inner .swiper .swiper-wrapper {width: 100%;}
+.gallery .inner .swiper .swiper-wrapper .swiper-slide {width: 800px; margin-right: 75px;}
+.gallery .inner .swiper .swiper-wrapper .swiper-slide img {width: 100%;}
+
+
+/* animation */
+@-webkit-keyframes rightslide-ani {
+    0%{opacity: 0; transform: translateX(100px);}
+    30%{opacity: 0; transform: translateX(100px);}
+}
+@keyframes rightslide-ani {
+    0%{opacity: 0; transform: translateX(100px);}
+    30%{opacity: 0; transform: translateX(100px);}
+}
+
+.gallery.motion .inner {-webkit-animation-name: rightslide-ani;animation-name: rightslide-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+
+@-webkit-keyframes opacity-ani {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes opacity-ani {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.gallery.motion {-webkit-animation-name: opacity-ani;animation-name: opacity-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+/* fin */
+
+.location {width: 100%;}
+.location .inner {margin: 180px 0 300px 384px; padding-right: 384px;}
+.location .inner .tit {display: flex}
+.location .inner .tit h2 {font-size: 45px; font-family: 'Noto Serif', serif; font-weight: lighter; margin-bottom: 40px; margin-right: 30px;}
+.location .inner .tit .txt {font-size: 17px; padding-top: 25px;}
+.location .inner .map {width: 100%; margin: 0 auto 70px;}
+.location .inner .map iframe {width: 100%; height: 500px;}
+.location .inner .transport {width: 100%; margin-bottom: 250px; border-bottom: 1px solid #707070;}
+.location .inner .transport>p {padding: 25px 0; font-size: 20px; color: #707070; border-top: 1px solid #707070;  position: relative;}
+.location .inner .transport>p::before {position: absolute; top: 20px; right: 10px; font-size: 30px; font-family: fontAwesome; content: '\f107'; display: block;}
+.location .inner .transport>p::after {position: absolute; top: 20px; right: 10px; font-size: 30px; font-family: fontAwesome; content: '\f106'; display: none;}
+.location .inner .transport>p.on::before {position: absolute; top: 20px; right: 10px; font-size: 30px; font-family: fontAwesome; content: '\f107'; display: none;}/* on class가 붙을 때 display none으로 바꾼다 */
+.location .inner .transport>p.on::after {position: absolute; top: 20px; right: 10px; font-size: 30px; font-family: fontAwesome; content: '\f106'; display: block;}/* on class가 붙을 때 display block으로 바꾼다 */
+
+/* open class */
+.location .inner .transport .subway.open {margin: 50px 0 75px; overflow: hidden;}
+.location .inner .transport .subway.open li {float: left; width: 30%; display: flex; justify-content: space-between;}
+.location .inner .transport .subway.open li:nth-child(2) {margin-left: 200px;}
+.location .inner .transport .subway.open .station {font-size: 20px;}
+.location .inner .transport .subway.open .text {font-size: 16px; margin-top: 3px;}
+.location .inner .transport .subway.open .text span {display: block; margin-top: 20px;}
+.location .inner .transport .bus.open {margin: 50px 0 25px; overflow: hidden;}
+.location .inner .transport .bus.open li {width: 25%; float: left; margin-bottom: 50px; font-size: 20px;}
+.location .inner .transport .bus.open li span {margin-top: 15px; font-size: 16px; display: block;}
+.location .inner .transport .ktx.open {margin: 50px 0 75px; overflow: hidden;}
+.location .inner .transport .ktx.open li {float: left; overflow: hidden;}
+.location .inner .transport .ktx.open li p {float: left;}
+.location .inner .transport .ktx.open li:nth-child(2) {margin-left: 200px;}
+.location .inner .transport .ktx.open .station {font-size: 20px;}
+.location .inner .transport .ktx.open .text {font-size: 16px; margin-left: 70px; margin-top: 3px;}
+.location .inner .transport ul.open {display: none;}
+
+
+/* animation */
+.location .inner.motion {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+/* fin */
+
+footer {width: 100%; height: 380px; background: #303030; font-size: 13px; padding-top: 85px; box-sizing: border-box;}
+.innerfooter {width: 75%; color: #b2b2b2; margin: 0 auto;}
+.innerfooter .top {width: 100%; overflow: hidden;}
+.innerfooter .top ul {width: 32%; display: flex; justify-content: space-between; float: left; margin-bottom: 40px; color: #fff;}
+.innerfooter .top .right {width: 7%; float: right; margin-top: 13px; color: #fff; position: relative;}
+.innerfooter .top .right::before {position: absolute; top: 0px; right: 2px; content: '\f13a'; font-size: 14px; font-family: fontAwesome;}
+.innerfooter .middle {width: 100%; margin-bottom: 50px;}
+.innerfooter .middle .first {width: 100%; margin-bottom: 8px;}
+.innerfooter .middle .second {width: 34%; margin-bottom: 8px; display: flex; justify-content: space-between;}
+.innerfooter .middle .third {width: 30%; margin-bottom: 8px; display: flex; justify-content: space-between;}
+.innerfooter .bottom {width: 100%; padding-top: 35px; border-top: 1px solid #b2b2b2; overflow: hidden;}
+.innerfooter .bottom .txt {float: left; width: 30%;}
+.innerfooter .bottom .images {width: 9%; display: flex; justify-content: space-between; float: right;}
+.innerfooter .bottom .images .insta {width: 32px;}
+.innerfooter .bottom .images .insta img {width: 100%;}
+.innerfooter .bottom .images .kakao {width: 32px;}
+.innerfooter .bottom .images .kakao img {width: 100%;}
+.innerfooter .bottom .images .facebook {width: 32px;}
+.innerfooter .bottom .images .facebook img {width: 100%;}

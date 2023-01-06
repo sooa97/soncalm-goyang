@@ -1,0 +1,289 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+@font-face {font-family: 'HANBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/HANBatang.woff') format('woff'); font-weight: normal; font-style: normal;}
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: 'NanumSquare';}
+.wrap {width: 100%; overflow: hidden;}
+
+/* header */
+header {width: 100%; height: 85px; line-height: 85px; position: fixed; z-index: 100; transition: all 0.2s;}
+header.on {background: #fff; box-shadow: 2px 0 6px rgba(0,0,0,0.2); transition: all 0.2s;}
+header .innerHeader {width: 85%; height: 100%; position: relative; margin: 0 auto; overflow: hidden;}
+header .innerHeader a {display: block; width: 100%; height: 100%;}
+header .innerHeader .logo {position: absolute; left: 50%; top: 22px; transform: translateX(-50%); text-align: center; font-size: 33px; line-height: 0.7; font-family: 'Noto Serif', serif; font-weight: lighter; letter-spacing: 1px; width: 20%;}
+header .innerHeader .logo span {font-size: 16px;}
+header .innerHeader .left {float: left;}
+header .innerHeader .left li {float: left; font-size: 16px; margin-right: 30px;}
+header .innerHeader .right {float: right; position: relative;}
+header .innerHeader .right li {float: left; font-size: 16px; margin-right: 30px;}
+header .innerHeader .right li:nth-child(2) {color: #B79383; margin-right: 60px;}
+header .innerHeader .right li:nth-child(3) {margin-right: 0;}
+
+/* menuOpen */
+.menuOpen {width: 500px; overflow: hidden; background: #DCD2C8; height: 100vh; position: fixed; top: 0; right: -500px; z-index: 100; transition: all 0.5s;}
+.menuOpen .close {position: absolute; top: 30px; right: 50px;}
+.menuOpen .menuwrap {margin-top: 150px; margin-left: 80px;}
+.menuOpen .menuwrap ul li {font-family: 'Noto Serif', serif; font-size: 40px; margin-bottom: 50px;}
+.menuOpen .menuwrap .bottom {padding-top: 30px; border-top: 1px solid #707070; position: absolute; bottom: 40px; left: 80px; width: 300px}
+.menuOpen .menuwrap .customer {font-size: 16px; color: #707070; margin-bottom:  15px;}
+.menuOpen .menuwrap .contact {font-size: 16px; color: #707070; margin-bottom:  15px;}
+.menuOpen .menuwrap .sns {display: flex; justify-content: space-between; width: 100px;}
+.menuOpen .menuwrap .sns p {width: 27px;}
+.menuOpen .menuwrap .sns p img {width: 100%;}
+
+/* menuOpen.on */
+.menuOpen.on {transition: all 0.5s; right: 0;}
+
+/* section.visual */
+.visual {position: relative; width: 100%; height: 100vh; background: #f5f1ea;}
+.visual .msg {position: absolute; left: 50%; top: 48%; transform: translateX(-50%); font-size: 35px; color: #fff; font-family: 'Noto Serif', serif; font-weight: lighter;}
+.visual .slide {width: 100%;}
+.visual .slide li {width: 100%; height: 94vh;}
+.visual .slide li div.first {height: 100%; background: url(../img/main-image1.png) no-repeat center/cover;}
+.visual .slide li div.second {height: 100%;; background: url(../img/main-image2.png) no-repeat center/cover;;}
+.visual .slide li div.third {height: 100%; background: url(../img/main-image3.png) no-repeat center/cover;}
+
+.visual .bottom {position: absolute; bottom: 0; right: 0; width: 1085px; height: 115px; overflow: hidden;}
+.visual .bottom .list {background: #fff; width: 100%; display: flex; padding: 30px 0 30px 40px; float: left; width: 83%; box-sizing: border-box;}
+.visual .bottom .list li {border-right: 1px solid #bebebe; font-size: 20px;}
+.visual .bottom .list li:nth-child(1){padding-right: 100px; box-sizing: border-box;}
+.visual .bottom .list li:nth-child(2){padding-right: 130px; padding-left: 30px;}
+.visual .bottom .list li:nth-child(3) {text-align: center; padding: 0 30px;}
+.visual .bottom .list li:nth-child(4) {text-align: center; padding: 0 25px;}
+.visual .bottom .list li:nth-child(5) {text-align: center; padding: 0 40px; border: none;}
+.visual .bottom .list li span {font-size: 14px; color: #979797; padding-bottom: 15px; display: inline-block;}
+.visual .bottom .search {float: right; background: #9c928c; width: 17%; height: 115px; font-size: 20px; color: #fff; padding: 45px 0 0 0; box-sizing: border-box; font-family: 'Noto Serif', serif; font-weight: lighter; text-align: center; cursor: pointer;}
+
+/* animation */
+@-webkit-keyframes msg-ani {
+    0%{opacity: 0; transform: translateY(30px);}
+    30%{opacity: 0; transform: translateY(30px) translateX(-50%);}
+}
+
+@keyframes msg-ani {
+    0%{opacity: 0; transform: translateY(30px);}
+    30%{opacity: 0; transform: translateY(30px) translateX(-50%);}
+}
+
+.visual .msg.motion {-webkit-animation-name: msg-ani;animation-name: msg-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+/* fin */
+
+
+section.offers {width: 100%; background: #f5f1ea; overflow: hidden;}
+.offers .left {overflow: hidden; width: 25%; margin: 210px 0 0 150px; float: left;}
+.offers .left h2 {font-family: 'Noto Serif', serif; font-size: 45px; font-weight: lighter; margin-bottom: 53px;}
+.offers .left .txt {font-size: 16px; font-family: 'NanumSquare'; color: #707070; margin-bottom: 53px; line-height: 1.8;}
+.offers .left .btn p {float: left;}
+.offers .left .btn .event {width: 50px; margin-right: 70px;}
+.offers .left .btn .package {width: 70px;}
+.offers .left .btn a {width: 100%; height: 100%; display: block; padding-bottom: 3px; position: relative; font-size: 16px; color: #B79383;}
+
+/* hover */
+.offers .left .btn a:before {position: absolute; content: ''; bottom: 0; left: 50%; transform: translateX(-50%); width: 0%; height: 1px; background: #b79383; transition: all 0.3s;}
+.offers .left .btn a:hover:before, .offers .left .btn a:focus:before {width: 100%; transition: all 0.3s;}
+/* fin */
+
+.offers .slide {width: 1200px; float: right; margin: 223px 0 220px 0; position: relative;}
+.offers .slide .box {margin-right: 64px;}
+.offers .slide .box .img {margin-bottom: 10px; width: 100%;}
+.offers .slide .box .img img {width: 100%;}
+.offers .slide .box .date {font-size: 14px; color: #707070; margin-bottom: 25px;}
+.offers .slide .box .content {font-size: 16px; color: #707070; line-height: 1.8; width: 100%;}
+.offers .slide .box .content span {font-size: 25px; color: #000; margin-bottom: 15px; display: inline-block; font-family: 'Hanbatang'; font-weight: bold;}
+
+/* slick-arrow */
+.offers .slick-arrow.slick-prev {position: absolute; top: 25%; left: 1%; border: none; background: none; z-index: 100; text-indent: -999999px;}
+.offers .slick-arrow.slick-next {position: absolute; right: 7.5%; top: 25%; border: none; background: none; z-index: 100; text-indent: -999999px;}
+.offers .slick-arrow.slick-prev:before {position: absolute; content: '\f104'; top: 0; left: 0; font-size: 40px; text-indent: 0; font-family: fontAwesome; color: #fff; opacity: 0.7;}
+.offers .slick-arrow.slick-next:before {position: absolute; content: '\f105'; top: 0; left: 0; font-size: 40px; text-indent: 0;  font-family: fontAwesome; color: #fff; opacity: 0.7;}
+
+
+/* animation */
+@-webkit-keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+@keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+
+.offers .left.motion h2 {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1s; animation-duration: 1s;}
+.offers .left.motion .txt {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+.offers .left.motion a {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+
+@-webkit-keyframes rightslide-ani {
+    0%{opacity: 0; transform: translateX(100px);}
+    30%{opacity: 0; transform: translateX(100px);}
+}
+
+@keyframes rightslide-ani {
+    0%{opacity: 0; transform: translateX(100px);}
+    30%{opacity: 0; transform: translateX(100px);}
+}
+
+.offers .slide.motion {-webkit-animation-name: rightslide-ani;animation-name: rightslide-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+/* fin */
+
+
+.dining {width: 100%; height: 110vh; overflow: hidden;}
+.dining .view {position: relative;}
+.dining .view .txt {width: 20%; font-size: 14px; color: #707070; float: right; padding-top: 74px; padding-right: 20px; text-align: center;}
+.dining .view .img {position: absolute; top: 70px; right: 152px;}
+.dining .center {width: 100%; text-align: center; margin-top: 90px;}
+.dining .center h2 {font-family: 'Noto Serif', serif; font-size: 45px; font-weight: lighter; margin-bottom: 18px;}
+.dining .center .txt {font-size: 16px; color: #707070;}
+.dining .slide {margin-top: 90px;}
+
+/* simply scroll */
+.simply-scroll-container {position: relative; margin-bottom: 40px; width: 100%;}
+.simply-scroll-clip {position: relative; overflow: hidden; width: 100%;}
+.simply-scroll-list {display: flex;}
+.simply-scroll-list li {margin: 0 20px;}
+
+/* animation */
+@-webkit-keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+@keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+
+.dining .center.motion h2 {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1s; animation-duration: 1s;}
+.dining .center.motion .txt {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+/* fin */
+
+
+.facilities {width: 100%; background: #f5f1ea; display: flex;}
+.facilities .left {width: 50%;}
+.facilities .left img {width: 100%;}
+.facilities .right {width: 50%;}
+.facilities .right h2 {width: 100%; font-family: 'Noto Serif', serif; font-size: 45px; font-weight: lighter;  margin-bottom: 18px; text-align: center; padding-top: 130px;}
+.facilities .right .bottom {width: 100%; font-size: 16px; color: #707070; text-align: center; margin-bottom: 90px;}
+.facilities .right ul {width: 90%; margin: 0 auto; display: flex; justify-content: space-between;}
+.facilities .right ul li {width: 30%;}
+.facilities .right ul li a {width: 100%; height: 100%; display: block;}
+.facilities .right ul li .img {width: 100%; overflow: hidden;}
+.facilities .right ul li .img img {width: 100%; transition: all 0.8s;}/* 마우스를 내렸을때도 자연스럽게 전환 */
+.facilities .right ul li .txt {width: 100%; font-size: 25px; font-family: 'Noto Serif', serif; margin-top: 30px; text-align: center;}
+
+/* hover */
+.facilities .right ul li a:hover img {transform: scale(1.1); transition: all 0.8s;}
+
+/* animation */
+@-webkit-keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+@keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+
+.facilities .right.motion h2 {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1s; animation-duration: 1s;}
+.facilities .right.motion .bottom {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+.facilities .right.motion ul li {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+.facilities .right.motion ul li:nth-child(2) {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2.5s; animation-duration: 2.5s;}
+.facilities .right.motion ul li:nth-child(3) {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 3s; animation-duration: 3s;}
+/* fin */
+
+
+.wedding {width: 100%; background: #f5f1ea; display: flex;}
+.wedding .left {width: 50%;}
+.wedding .left h2 {width: 100%; font-family: 'Noto Serif', serif; font-size: 45px;font-weight: lighter;  margin-bottom: 18px; text-align: center; padding-top: 145px;}
+.wedding .left .bottom {width: 100%; font-size: 16px; color: #707070; text-align: center; margin-bottom: 95px;}
+.wedding .left ul {width: 72%; margin: 0 auto; display: flex; justify-content: space-between;}
+.wedding .left ul li {width: 44%;}
+.wedding .left ul li a {width: 100%; height: 100%; display: block;}
+.wedding .left ul li .img {width: 100%; margin: 0 auto; overflow: hidden;}
+.wedding .left ul li .img img {width: 100%; transition: all 0.8s;}
+.wedding .left ul li .txt {width: 100%; font-size: 25px; font-family: 'Noto Serif', serif; margin-top: 30px; text-align: center;}
+.wedding .right {width: 50%;}
+.wedding .right img {width: 100%;}
+
+/* hover */
+.wedding .left ul li a:hover img {transform: scale(1.1); transition: all 0.8s;}
+
+/* animation */
+@-webkit-keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+@keyframes up-ani {
+    0%{opacity: 0; transform: translateY(50px);}
+    30%{opacity: 0; transform: translateY(50px);}
+}
+
+.wedding .left.motion h2 {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1s; animation-duration: 1s;}
+.wedding .left.motion .bottom {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 1.5s; animation-duration: 1.5s;}
+.wedding .left.motion ul li {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2s; animation-duration: 2s;}
+.wedding .left.motion ul li:nth-child(2) {-webkit-animation-name: up-ani;animation-name: up-ani; -webkit-animation-duration: 2.5s; animation-duration: 2.5s;}
+/* fin */
+
+section.accordion {width: 100%;}
+.petclub {width: 100%; background: #c8a696; padding: 110px 0 60px; transition: all 1s;}
+.petclub .center {width: 100%; text-align: center;}
+.petclub .center h2 {font-family: 'Noto Serif', serif; font-size: 35px; font-weight: lighter; color: #fff; margin-bottom: 12px; transition: all 1s;}
+.petclub .center .txt {font-size: 13px; color: #fff; margin-bottom: 0px; transition: all 1s;}
+.petclub .center .btn a {color: #fff; font-size: 16px; border: 1px solid #fff; padding: 15px 50px; display: inline-block; position: relative; opacity: 0; transition: all 1s;}
+.petclub .center .btn a::before {position: absolute; content: ''; background: #fff; width: 100%; height: 100%; opacity: 0; top: 0; left: 0; transition: all 0.5s;}
+.petclub .center .btn a:hover:before {opacity: 15%; transition: all 0.5s;}
+
+/* on class */
+.petclub.on {padding: 250px 0; transition: all 1s;}
+.petclub.on .center .txt {margin-bottom: 45px; transition: all 1s;}
+.petclub.on .center .btn a {opacity: 1; transition: all 1s;}
+.petclub.on .center h2 {font-size: 50px; margin-bottom: 15px; transition: all 1s;}
+.petclub.on .center .txt {font-size: 15px; transition: all 1s;}
+
+
+.attraction {background: #9c928c;  padding: 110px 0 60px; transition: all 1s;}
+.attraction .center {width: 100%; text-align: center;}
+.attraction .center h2 {font-family: 'Noto Serif', serif; font-size: 35px; font-weight: lighter; color: #fff; margin-bottom: 12px; transition: all 1s;}
+.attraction .center .txt {font-size: 13px; color: #fff; margin-bottom: 0px; transition: all 1s;}
+.attraction .center .btn a {color: #fff; font-size: 16px; border: 1px solid #fff; padding: 15px 50px; display: inline-block; position: relative; opacity: 0; transition: all 1s;}
+.attraction .center .btn a::before {position: absolute; content: ''; background: #fff; width: 100%; height: 100%; opacity: 0; top: 0; left: 0; transition: all 0.5s;}
+.attraction .center .btn a:hover:before {opacity: 15%; transition: all 0.5s;}
+
+/* on class */
+.attraction.on {padding: 250px 0; transition: all 1s;}
+.attraction.on .center .txt {margin-bottom: 45px; transition: all 1s;}
+.attraction.on .center .btn a {opacity: 1; transition: all 1s;}
+.attraction.on .center h2 {font-size: 50px; margin-bottom: 15px; transition: all 1s;}
+.attraction.on .center .txt {font-size: 15px; transition: all 1s;}
+
+
+footer {width: 100%; height: 380px; background: #303030; font-size: 13px; padding-top: 85px; box-sizing: border-box;}
+.innerfooter {width: 75%; color: #b2b2b2; margin: 0 auto;}
+.innerfooter .top {width: 100%; overflow: hidden;}
+.innerfooter .top ul {width: 32%; display: flex; justify-content: space-between; float: left; margin-bottom: 40px; color: #fff;}
+.innerfooter .top .right {width: 7%; float: right; margin-top: 13px; color: #fff; position: relative;}
+.innerfooter .top .right::before {position: absolute; top: 0px; right: 2px; content: '\f13a'; font-size: 14px; font-family: fontAwesome;}
+.innerfooter .middle {width: 100%; margin-bottom: 50px;}
+.innerfooter .middle .first {width: 100%; margin-bottom: 8px;}
+.innerfooter .middle .second {width: 34%; margin-bottom: 8px; display: flex; justify-content: space-between;}
+.innerfooter .middle .third {width: 30%; margin-bottom: 8px; display: flex; justify-content: space-between;}
+.innerfooter .bottom {width: 100%; padding-top: 35px; border-top: 1px solid #b2b2b2; overflow: hidden;}
+.innerfooter .bottom .txt {float: left; width: 30%;}
+.innerfooter .bottom .images {width: 9%; display: flex; justify-content: space-between; float: right;}
+.innerfooter .bottom .images .insta {width: 32px;}
+.innerfooter .bottom .images .insta img {width: 100%;}
+.innerfooter .bottom .images .kakao {width: 32px;}
+.innerfooter .bottom .images .kakao img {width: 100%;}
+.innerfooter .bottom .images .facebook {width: 32px;}
+.innerfooter .bottom .images .facebook img {width: 100%;}
